@@ -692,7 +692,7 @@ void loop()
         mqtt_client.loop();
     }
     
-    if (now - LAST_UPDATE_SENT > UPDATE_INTERVAL) {
+    if (now - LAST_UPDATE_SENT > UPDATE_INTERVAL || LAST_UPDATE_SENT == 0) {
         read_p1_hardwareserial();
     }
 }
