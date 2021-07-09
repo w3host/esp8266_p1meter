@@ -593,6 +593,8 @@ void setup()
         read_eeprom(102, 32).toCharArray(MQTT_PASS, 32); // * 102-133
     }
 
+    WiFi.hostname(HOSTNAME);
+
     WiFiManagerParameter CUSTOM_MQTT_HOST("host", "MQTT hostname", MQTT_HOST, 64);
     WiFiManagerParameter CUSTOM_MQTT_PORT("port", "MQTT port",     MQTT_PORT, 6);
     WiFiManagerParameter CUSTOM_MQTT_USER("user", "MQTT user",     MQTT_USER, 32);
