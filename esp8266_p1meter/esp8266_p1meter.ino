@@ -235,10 +235,13 @@ bool decode_telegram(int len)
     int endChar = FindCharInArrayRev(telegram, '!', len);
     bool validCRCFound = false;
 
+    Serial.print("> ");
     for (int cnt = 0; cnt < len; cnt++) {
         Serial.print(telegram[cnt]);
     }
-    Serial.print("\n");
+    if (telegram[len - 1] != '\n') {
+        Serial.print("\n");
+    }
 
     if (startChar >= 0)
     {
