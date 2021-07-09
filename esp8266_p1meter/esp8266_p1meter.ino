@@ -568,9 +568,11 @@ void setup()
     Serial.println("");
     Serial.flush();
 
+    #if SERIAL_RX_INVERTED
     // Invert the RX serialport by setting a register value, this way the TX might continue normally allowing the serial monitor to read println's
     Serial.println("Swapping UART0 RX to inverted");
     USC0(UART0) = USC0(UART0) | BIT(UCRXI);
+    #endif
 
     Serial.println("Serial port is ready to recieve.");
 
